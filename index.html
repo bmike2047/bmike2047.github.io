@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="bmike2047,Spring Boot,Spring Integration,SFTP,embedded,java17,dipole calculator,antenna,electric field,electromagnetic,java,engineering,javafx,antenna,testfx,dipole,java-modules,maxwell-equations,cartesian-coordinate,link-budget-calculator,cst-studio,half-wave,matched-load,radiation-resistance,friis-formula,zip,password-manager,password,secure,aes-256,javafx-application,aes-encryption,javafx-project,javafx-gui,spring,spring-boot,mongodb,mongodb-database,mongodb-embedded,flapdoodle-embed-mongo,jdk17">
+    <meta name="description" content="Raspberry Pi Alarm System with Spring Boot Thymeleaf and Pi4J, Dipole RF Calculator, SFTP Integration, MongoDB embedded, Secure text with AES256">
     <meta name="author" content="bmike2047">
     <title>Mihai Buleandra</title>
     <link href="assets/css/css@3.css" rel="stylesheet">
@@ -62,6 +62,25 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
+                        <a href="https://github.com/bmike2047/springboot-rpi-alarm-system">
+                            <img src="assets/images/p5.png" class="img-thumbnail" alt="Raspberry Pi - Alarm system"/>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Raspberry Pi 4B - Alarm system</h5>
+                            <p class="card-text">Raspberry Pi 4B - Alarm system with Spring boot, PI4J and Thymeleaf.
+                                The advantage of using Java is that it provides a mature multi-threading library and the powerful spring boot framework that makes this simple project versatile as it can be used both offline via the provided keypad or remote via a web browser.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="https://github.com/bmike2047/springboot-rpi-alarm-system"
+                                       class="btn btn-secondary">View</a>
+                                </div>
+                                <small class="text-body-secondary">7 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
                         <a href="https://github.com/bmike2047/dipole-rf-calculator">
                             <img src="assets/images/p1.png" class="img-thumbnail" alt="Dipole RF Calculator"/>
                         </a>
@@ -71,8 +90,12 @@
                                 Calculates VOC (V open circuit) and Pload from the incident field Ez on an identical
                                 receiving dipole antenna at distance r.<br/>
                                 Calculates Prx (power received to a perfectly matched load) via Friis formula.<br/>
-                                Includes other various calculations to help with a quick link budget design.</br>
-                                Additionally, math formulas are also provided in LaTeX format.
+                                <br/><b>Other features</b><br><br>
+                                Displays dipole length from input frequency for a quick antenna design.<br>
+                                Displays dipole feed current Ia from input power.<br>
+                                Converts both Tx and Rx power to dbm for a quick link budget design.<br>
+                                Calculates the free space path loss for a quick link budget design. (this includes both Tx and Rx 2.15db gain)<br>
+                                Computed results are displayed in engineering format.
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
@@ -93,8 +116,13 @@
                             <h5 class="card-title">Spring Boot Integration SFTP</h5>
                             <p class="card-text">Use Spring Boot with Spring Integration to download and process a
                                 remote SFTP file.
-                                Network failover and processing errors recovery with local file copy and pseudo
-                                transaction manager.</p>
+                                Automatically reconnect and retry in case of network failure.<br/>
+                                Recovery from catastrophic or processing failure via local file storage and Transaction Manager.<br/>
+                                Send any errors from errorChannel to the provided health-check via Spring Actuator.<br/>
+                                Health-check is secured via Spring Security.<br/>
+                                Testing is done via an embedded Apache Mina sshd server.<br/>
+                                Docker project for SFTP server is provided to simulate a Production environment.<br/>
+                                </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="https://github.com/bmike2047/springboot-integration-sftp"
