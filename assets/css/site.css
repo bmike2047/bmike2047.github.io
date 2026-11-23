@@ -250,3 +250,51 @@ body {
 @media(max-width:720px) {
   .hero { background: linear-gradient(100deg,rgba(8,14,24,.64),rgba(8,14,24,.47)); }
 }
+
+/* Mobile observatory visibility: reserve a decorative image band above the hero
+   text. On narrow viewports a cover-sized BODY background would be scaled to
+   the entire scroll height, cropping the radio dish out of the visible screen. */
+@media (max-width:720px) {
+  body {
+    /* The hero owns the mobile artwork; avoid a second, oversized body image. */
+    background-color:#0a101b;
+    background-image:none;
+    background-attachment:scroll;
+  }
+  .hero,
+  .page-hero {
+    position:relative;
+    isolation:isolate;
+    padding-top:255px;
+    background:transparent;
+  }
+  .hero::before,
+  .page-hero::before {
+    content:"";
+    position:absolute;
+    z-index:0;
+    pointer-events:none;
+    inset:0 0 auto;
+    height:238px;
+    background-image:
+      linear-gradient(180deg, rgba(9,14,24,.05) 0%, rgba(9,14,24,.02) 65%, #070a12 100%),
+      url("../images/observatory-background-left.webp");
+    background-repeat:no-repeat;
+    background-size:cover,auto 490px;
+    background-position:center center, left -4px top -91px;
+    filter: brightness(1.55);
+  }
+  .hero > .container,
+  .page-hero > .container {
+    position:relative;
+    z-index:1;
+  }
+}
+@media (max-width:380px) {
+  .hero,.page-hero { padding-top:226px; }
+  .hero::before,.page-hero::before {
+    height:210px;
+    background-size:cover,auto 455px;
+    background-position:center center,left -5px top -84px;
+  }
+}
